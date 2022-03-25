@@ -7,7 +7,7 @@ function makePromises(event) {
   const promiseAmount = Number(event.currentTarget.elements.amount.value);
   const step = Number(event.currentTarget.elements.step.value);
   let delay = Number(event.currentTarget.elements.delay.value);
-  for (let position = 0; position < promiseAmount; position+=1) {
+  for (let position = 1; position <= promiseAmount; position+=1) {
     createPromise(position,delay)
   .then(({ position, delay }) => {
     console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);

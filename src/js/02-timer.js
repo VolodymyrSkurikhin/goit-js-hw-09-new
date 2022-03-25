@@ -36,6 +36,8 @@ function startCount() {
     updateTimer({ days, hours, minutes, seconds });
     console.log({ days, hours, minutes, seconds })
   }, 1000)
+  btnRef.disabled = true;
+  pickerRef.disabled = true;
 };
 btnRef.addEventListener('click', startCount);
 

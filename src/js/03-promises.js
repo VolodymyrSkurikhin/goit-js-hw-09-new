@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 const formRef = document.querySelector("form");
 
 formRef.addEventListener('click', makePromises);
@@ -10,10 +11,10 @@ function makePromises(event) {
   for (let position = 1; position <= promiseAmount; position+=1) {
     createPromise(position,delay)
   .then(({ position, delay }) => {
-    console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+    Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
   .catch(({ position, delay }) => {
-    console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+    Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
   });
     delay+=step;
   }
